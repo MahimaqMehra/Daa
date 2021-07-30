@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+
+{
+	int n,i,j,num,key;
+	cin>>n;
+	for(i=0;i<n;i++)
+	{
+		
+		
+	cin>>num;
+	int a[num];
+	for(j=0;j<num;j++)
+	{
+		cin>>a[j];
+		}
+		
+
+	
+		cin>>key;
+		
+		
+		
+		cout<<num<<endl;
+	
+	for(j=0;j<num;j++)
+	{
+		cout<<"element"<<j+1<<" "<<a[j]<<endl;
+		}
+		
+
+	
+		cout<<key<<endl;
+	
+	
+	
+	
+	
+	}	
+	
+}
