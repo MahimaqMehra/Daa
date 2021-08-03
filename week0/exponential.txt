@@ -1,0 +1,56 @@
+#include<iostream>
+
+using namespace std;
+int binary(int[],int ,int ,int);
+int main()
+{
+	int n,i,num,j,c,key;
+	cin>>n;
+for(j=0;j<n;j++)
+{
+
+		cin>>num;
+		int a[num];
+		for(i=0;i<num;i++)
+		{
+			cin>>a[i];
+		}
+		cin>>key;
+		
+		if(a[0]==key)
+		{
+			cout<<"0";
+                        break;
+		}
+		while (i < n && a[i] <= key) 
+{
+		i = i*2; 
+}
+		c=binary(a,i/2,min(i,num-1),key);
+		cout<<c;
+}
+	return 0;
+}
+	int binary(int a[],int start,int end,int key)
+	{
+		if(start<=end)
+		{
+			int mid=(start+(end-start)/2);
+			if(a[mid]>key)
+			{
+				return binary(a,start,mid-1, key);
+				
+			}
+			if(a[mid]<key)
+			{
+				return binary( a,mid+1,end, key) ;
+			
+			}
+			else
+			{
+				return mid;
+			}
+		}
+	
+		return -1;
+	}
