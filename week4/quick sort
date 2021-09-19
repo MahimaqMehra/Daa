@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+void quicksort(int[],int,int );
+int quick(int[],int ,int );
+void swap(int*, int*);
+int main()
+{
+	int n,i;
+	cin>>n;
+	int a[n];
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	quicksort(a,0,n-1);
+	
+	for(i=0;i<n;i++)
+	{
+		cout<<a[i];
+	}
+	return 0;
+}
+void swap(int *a, int *b)
+{
+	int temp; 
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+void quicksort(int a[],int l,int r)
+{
+	if(l<r)
+	{
+	
+	int mid=quick(a,l,r);
+	quicksort(a,l,mid-1);
+	quicksort(a,mid+1,r);
+}
+	
+}
+int quick (int a[], int l, int r) 
+{ 
+    int pivot = a[r]; // pivot 
+    int i = (l- 1); // Index of smaller element and indicates the right position of pivot found so far
+  
+    for (int j = l; j <= r- 1; j++) 
+    { 
+        // If current element is smaller than the pivot 
+        if (a[j] < pivot) 
+        { 
+            i++; // increment index of smaller element 
+            swap(&a[i], &a[j]); 
+        } 
+    } 
+    swap(&a[i + 1], &a[r]); 
+    return (i + 1); 
+} 
+  
+
