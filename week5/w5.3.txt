@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int m,n,i,j;
+	cin>>m;
+	cin>>n;
+	int a[m],b[n];
+	for(i=0;i<m;i++)
+	{
+		cout<<"first array a";
+		cin>>a[i];
+	}
+	for(i=0;i<n;i++)
+	{
+		cout<<"second array b";
+		cin>>b[i];
+	}
+	i=0;
+	j=0;
+	while(i<=m-1 && j<=n-1)
+	{
+		if(a[i]<b[j])
+		{
+			i++;
+		}
+		else if(a[i]>b[j])
+		{
+			j++;
+		}
+		else
+		{
+			
+			cout<<"common element"<<a[i]<<endl;
+			i++;
+			j++;
+		}
+	}
+	
+	return 0;
+}

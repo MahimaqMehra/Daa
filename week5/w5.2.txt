@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,i,j,temp,key,l,r;
+	cin>>n;
+	int a[n];
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	for(i=0;i<=n-2;i++)
+	{
+	
+		for(j=i+1;j<=n-1;j++)
+		{
+			if(a[j]<a[i])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+		for(i=0;i<n;i++)
+	{
+		cout<<a[i];
+	}
+	
+	cout<<"enter key element";
+	cin>>key;
+	l=0;
+	r=n-1;
+	while(l<r)
+	{
+		if(a[l]+a[r]<key)
+		{
+			l++;
+		}
+		else if(a[l]+a[r]>key)
+		{
+			r--;
+		}
+		else 
+		{
+		
+			
+			cout<<"pairs are"<<a[l];
+				cout<<a[r]<<endl;
+			r--;
+	
+	
+		}
+	}
+	
+	
+	return 0;
+}
